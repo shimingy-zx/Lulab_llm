@@ -1,0 +1,20 @@
+# 忽略Django自动生成的数据库文件
+*.sqlite3
+
+# 忽略Django自动生成的静态文件
+staticfiles/
+
+# 忽略Django生成的模板缓存
+*.pyc
+__pycache__/
+
+# 忽略Django的本地设置
+settings_local.py
+
+# 忽略IDE和编辑器生成的文件和目录
+.vscode/
+.idea/
+*.pyc
+
+# 忽略日志文件
+*.log
