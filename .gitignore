@@ -20,4 +20,4 @@ settings_local.py
 *.log
 
 # 忽略变量文件
-*.env
+.env
