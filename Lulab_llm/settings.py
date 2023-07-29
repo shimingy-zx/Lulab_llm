@@ -12,12 +12,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
+# 加载.env文件
+load_dotenv()
+
+# 读取环境变量
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-!09eeurngtqph7$n2i$4cts9c_jnd^x_3zi8!e!0=)jp0hebme'
