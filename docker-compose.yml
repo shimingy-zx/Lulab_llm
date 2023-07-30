@@ -1,0 +1,28 @@
+#version: '3.9'
+#
+#networks:
+#  net:
+#    driver: bridge
+#
+#services:
+#  server:
+#    image: server
+#    build:
+#      context: ../../../../download
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./:/chroma
+#      - index_data:/index_data
+#
+#    environment:
+#      - IS_PERSISTENT=TRUE
+#    ports:
+#      - 8000:8000
+#    networks:
+#      - net
+#
+#volumes:
+#  index_data:
+#    driver: local
+#  backups:
+#    driver: local
