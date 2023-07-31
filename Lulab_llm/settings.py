@@ -27,6 +27,8 @@ load_dotenv()
 
 # 读取环境变量
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
+print("OPENAI_API_BASE"+OPENAI_API_BASE+";"+"OPENAI_API_KEY:"+OPENAI_API_KEY)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 

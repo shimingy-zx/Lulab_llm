@@ -30,11 +30,6 @@ class QueryChat(APIView):
     def post(request):
         """
         """
-        # req = request.data
-        #
-        # print(req)
-        # print(request.POST.get('q'))
-
         raw_documents = TextLoader('static/demo.txt', 'utf-8').load()
         text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
