@@ -30,6 +30,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
 print("OPENAI_API_BASE"+OPENAI_API_BASE+";"+"OPENAI_API_KEY:"+OPENAI_API_KEY)
 
+MILVUS_HOST = os.getenv("MILVUS_HOST")
+MILVUS_PORT = os.getenv("MILVUS_PORT")
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
