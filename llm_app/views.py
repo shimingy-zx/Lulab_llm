@@ -22,7 +22,6 @@ from langchain.prompts.chat import (
 )
 from langchain.chains import LLMChain
 from langchain.schema import BaseOutputParser
-
 import os
 
 
@@ -94,3 +93,37 @@ class QueryChat(APIView):
         # docs = db.similarity_search_by_vector(embedding_vector)
 
         # return Response({"content": docs[0].page_content})
+
+class QueryFile(APIView):
+    @staticmethod
+    def get(request):
+        """
+        """
+        student_id = {"fjidsoajf"}  # 提取数据表中数据
+        return Response(student_id)
+
+
+    @staticmethod
+    def post(request):
+        """
+        """
+        # 获取上传的文件，如果没有文件，就默认为None
+        # myFile = request.FILES.get("myfile", None)
+        myFiles = request.FILES.getlist("myfile", None)
+
+        if not myFiles:
+             return Response("no files for upload")
+        for f in myFiles:
+            single_upload(f)  # 处理上传来的文件
+        return Response("upload over!")
+
+def single_upload(f):
+    file = open(os.path.join(".\static\\file", f.name), "wb+")
+    for chunk in f.chunks():
+        file.write(chunk)
+    file.close()
+
+
+
+
+

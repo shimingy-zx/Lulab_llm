@@ -1,6 +1,10 @@
 # 使用一个基础的Python镜像
 FROM python:3.11.1
 
+# 设置pip源为阿里云源,如部署在国外服务器，请注释掉该命令即可。
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+RUN pip config set install.trusted-host mirrors.aliyun.com
+
 # 设置工作目录
 WORKDIR /app
 
